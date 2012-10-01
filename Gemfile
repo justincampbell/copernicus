@@ -4,6 +4,7 @@ gem 'rails', '3.2.8'
 
 gem 'jquery-rails'
 gem 'sqlite3'
+gem 'vagrant'
 
 group :assets do
   gem 'sass-rails', '~> 3.2.3'
