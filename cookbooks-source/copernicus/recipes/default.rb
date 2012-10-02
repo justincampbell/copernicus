@@ -20,28 +20,28 @@ node['rvm']['user_installs'] = [
 
 include_recipe "rvm::user"
 
-directory "/srv" do
+directory node[:directory] do
   recursive true
-  owner "vagrant"
-  group "vagrant"
+  owner node[:user]
+  group node[:group]
   mode "0755"
 end
 
-git "/srv/copernicus" do
+git node[:directory] do
   action :sync
-  repository "git://github.com/JustinCampbell/copernicus.git"
-  user "vagrant"
+  repository node[:git]
+  user node[:user]
 end
 
 rvm_shell "install gems" do
   code "bundle install"
-  cwd "/srv/copernicus"
-  user "vagrant"
+  cwd node[:directory]
+  user node[:user]
 end
 
 rvm_shell "start server" do
   code "bundle exec rails server --daemon --port 8080"
-  cwd "/srv/copernicus"
-  user "vagrant"
+  cwd node[:directory]
+  user node[:user]
 end
 
