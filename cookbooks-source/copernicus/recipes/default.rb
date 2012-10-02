@@ -27,13 +27,9 @@ directory "/srv" do
   mode "0755"
 end
 
-execute "git clone git://github.com/JustinCampbell/copernicus.git /srv/copernicus" do
-  not_if { File.exists? '/srv/copernicus' }
-  user "vagrant"
-end
-
-execute "git pull" do
-  cwd "/srv/copernicus"
+git "/srv/copernicus" do
+  action :sync
+  repository "git://github.com/JustinCampbell/copernicus.git"
   user "vagrant"
 end
 
