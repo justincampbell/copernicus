@@ -3,7 +3,7 @@ source :rubygems
 gem 'rails', '3.2.8'
 
 gem 'jquery-rails'
-gem 'sqlite3'
+#gem 'sqlite3'
 gem 'vagrant'
 
 group :assets do
