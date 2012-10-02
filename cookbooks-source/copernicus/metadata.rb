@@ -1,5 +1,5 @@
-maintainer       "YOUR_COMPANY_NAME"
-maintainer_email "YOUR_EMAIL"
+maintainer       "Justin Campbell"
+maintainer_email "justin@justincampbell.me"
 license          "All rights reserved"
 description      "Installs/Configures copernicus"
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
