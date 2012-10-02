@@ -13,3 +13,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development do
+  gem 'guard-foodcritic'
+
+  group :darwin do
+    gem 'growl'
+    gem 'rb-fsevent'
+  end
+end
